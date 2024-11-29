@@ -56,43 +56,6 @@
         </div>
     </section>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ offset: 0 });
-
-        // Typewriter effect
-        const typewriterText = document.querySelector('.typewriter-text');
-        const phrases = ["Web Developer", "Graphic Designer", "Freelancer"];
-        let phraseIndex = 0;
-        let letterIndex = 0;
-        let typingDelay = 100;
-        let erasingDelay = 50;
-        let newPhraseDelay = 2000; // Delay between phrases
-
-        function type() {
-            if (letterIndex < phrases[phraseIndex].length) {
-                typewriterText.textContent += phrases[phraseIndex].charAt(letterIndex);
-                letterIndex++;
-                setTimeout(type, typingDelay);
-            } else {
-                setTimeout(erase, newPhraseDelay);
-            }
-        }
-
-        function erase() {
-            if (letterIndex > 0) {
-                typewriterText.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
-                letterIndex--;
-                setTimeout(erase, erasingDelay);
-            } else {
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                setTimeout(type, typingDelay);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(type, newPhraseDelay + 250);
-        });
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
